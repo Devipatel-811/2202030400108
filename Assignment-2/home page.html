@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Bliss</title>
+    <style>
+        @import url("https:/fonts.googleapis.com/css2?family=Inter:wght@800&family=Lato:wght@700&display=swap");
+
+        /* font-family: 'Inter', sans-serif;
+      font-family: 'Lato', sans-serif; */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration-line: none;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            /* background-image: url(https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png); */
+            background-image: url(bg-food.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%100%;
+
+
+        }
+
+
+        .nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 3rem;
+
+        }
+
+        a {
+            font-size: 1.1rem;
+            padding-right: 5rem;
+            color: aliceblue;
+            margin-top: 20px;
+
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .info {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            color: aliceblue;
+        }
+
+        h3 {
+            font-size: 2.2rem;
+            color: aliceblue;
+        }
+
+        h3 span {
+            color: aliceblue;
+            font-size: 2.3rem;
+            font-weight: 900;
+        }
+
+        input {
+            width: 500px;
+            height: 50px;
+            font-size: 1.1rem;
+            border: none;
+        }
+
+        .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .search-icon {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+        }
+
+        img {
+            width: 34px;
+            height: 34px;
+            border: none;
+            padding-top: 20%;
+            padding-left: 20%;
+        }
+
+        .food-item {
+            width: 100vw;
+            height: 50%;
+            margin-top: 7%;
+        }
+
+        .food-item p {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            font-weight: 900;
+            color: #656565;
+            margin-top: 20px;
+            margin-bottom: 5%;
+        }
+
+        .food-img {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            column-gap: 1cm;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .food-img div {
+            width: 23%;
+            height: 100%;
+            font-size: 1.5rem;
+            text-align: center;
+            /* margin-left: 1%;     
+                            padding: 2% 3% 2% 0;
+                            padding-bottom: 3%; */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: rgb(243, 198, 22);
+        }
+
+        .food-img img {
+            width: 100%;
+            height: 100%;
+            transform: translate(-10%, -10%);
+            /* background-color: black; */
+
+        }
+
+        .location {
+            width: 100vw;
+            height: 50vh;
+            margin-top: 8%;
+            margin-bottom: 4%;
+        }
+
+        .location h2 {
+            font-size: 2rem;
+            color: #6a6868;
+            /* font-weight: lighter; */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            margin-bottom: 5%;
+        }
+
+        .grid {
+            margin-top: 20px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid div {
+            width: 25%;
+            height: 25%;
+            border: 0.5px solid rgba(228, 225, 225, 0.877);
+            background-color: rgb(224, 212, 188);
+
+        }
+
+        .a h5 {
+            font-size: 1.5rem;
+            color: rgb(71, 71, 71);
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 10px;
+
+        }
+
+        .a p {
+            font-size: 1.1rem;
+            color: rgb(115, 114, 114);
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 10px;
+            opacity: 0.7;
+        }
+
+        .a h4 {
+            font-size: 1.3rem;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .footer {
+            width: 100vw;
+            height: 60vh;
+            margin-top: 2rem;
+            background-color: #def50d70;
+        }
+
+        .footer h3 {
+            font-size: 2.3rem;
+            color: rgb(53, 52, 52);
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+            padding-top: 3%;
+            margin-left: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .data {
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .data div {
+            width: 300px;
+            height: 90%;
+        }
+
+        .about h4 {
+            font-size: 1.1rem;
+            color: rgba(30, 29, 29, 0.902);
+        }
+
+        .about p {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: rgb(129, 127, 127);
+        }
+
+        .rest h4 {
+            font-size: 1.1rem;
+            color: rgba(30, 29, 29, 0.908);
+        }
+
+        .rest p {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: rgb(129, 127, 127);
+        }
+
+        .learn h4 {
+            font-size: 1.1rem;
+            color: rgba(30, 29, 29, 0.908);
+        }
+
+        .learn p {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: rgb(129, 127, 127);
+        }
+
+        .last {
+            color: rgb(129, 127, 127);
+            margin: 1.5rem 5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="cart.html">Add to Cart</a>
+            <a href="#add-restaurant" class="add">Add restaurant</a>
+            <a href="login.html" class="login">Log in</a>
+            <a href="signup.html" class="signup">Sign up</a>
+        </div>
+        <div class="info">
+            <h1>Culinary Bliss</h1>
+            <h3>Food Lover's Paradise in <span> Ahmedabad </span></h3>
+            <div class="search">
+                <div class="search-icon"><img src="search icon.png" alt="icon"></div>
+                <input placeholder="What you are looking for ?" class="sc-fjdPjPdIckWv" value="">
+            </div>
+        </div>
+    </div>
+    <div class="food-item">
+        <p>WHAT'S ON YOUR MIND</p>
+        <div class="food-img">
+            <div class="food">
+                <img alt="image"
+                    src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png"
+                    loading="lazy">Pizza
+            </div>
+            <div class="food">
+                <img alt="image"
+                    src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png"
+                    loading="lazy">Burger
+            </div>
+            <div class="food">
+                <img alt="image"
+                    src="https://b.zmtcdn.com/data/o2_assets/fc641efbb73b10484257f295ef0b9b981634401116.png"
+                    loading="lazy">Sandwich
+            </div>
+            <div class="food">
+                <img alt="image"
+                    src="https://b.zmtcdn.com/data/dish_images/d5ab931c8c239271de45e1c159af94311634805744.png"
+                    loading="lazy">Cake
+            </div>
+        </div>
+    </div>
+    <div class="location">
+        <h2>Popular places in and around Ahmedabad</h2>
+        <div class="grid">
+            <div class="a">
+                <h5>The Hocco Kitchen</h5>
+                <p>nikol </p>
+            </div>
+            <div class="a">
+                <h5>The Mango Stories</h5>
+                <p>Naroda</p>
+            </div>
+            <div class="a">
+                <h5>McDonald's</h5>
+                <p>Naroda</p>
+            </div>
+            <div class="a">
+                <h5>Barbecue Culture</h5>
+                <p>Nikol</p>
+            </div>
+            <div class="a">
+                <h5>The Chocolate Room</h5>
+                <p>Odhav</p>
+            </div>
+            <div class="a">
+                <h5>Domino's Pizza</h5>
+                <p>Naroda</p>
+            </div>
+            <div class="a">
+                <h5>The Waffling Station</h5>
+                <p>Nikol</p>
+            </div>
+            <div class="a">
+                <h5>Real Paprika</h5>
+                <p>Naroda</p>
+            </div>
+            <div class="a">
+                <h4>Explore More
+                </h4>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+        <h3>Culinary
+            Bliss
+        </h3>
+        <div class="data">
+            <div class="about">
+                <h4>ABOUT
+                    CULINARY
+                    BLISS
+                </h4>
+                <p>Who
+                    We
+                    Are
+                </p>
+                <p>Blog
+                </p>
+                <p>Work
+                    With
+                    Us
+                </p>
+                <p>Invester
+                    Relations
+                </p>
+                <p>Report
+                    Fraud
+                </p>
+                <p>Press
+                    kit
+                </p>
+                <p>Contact
+                    Us
+                </p>
+
+            </div>
+            <div class="rest">
+                <h4>FOR
+                    RESTAURANTS
+                </h4>
+                <p>Partner
+                    With
+                    Us
+                </p>
+                <p>Apps
+                    For
+                    You
+                </p>
+                <br>
+                <br>
+                <h4>FOR
+                    ENTERPRISES
+                </h4>
+                <p>Foody
+                    Heaven
+                    For
+                    Enterprises
+                </p>
+
+            </div>
+            <div class="learn">
+                <h4>LEARN
+                    MORE
+                </h4>
+                <p>Privicy
+                </p>
+                <p>Security
+                </p>
+                <p>Term
+                </p>
+                <p>Sitemaps
+                </p>
+            </div>
+        </div>
+        <!-- <hr> -->
+        <p class="last">
+            By
+            continuing
+            past
+            this
+            page,
+            you
+            agree
+            to
+            our
+            Terms
+            of
+            Service,
+            Cookie
+            Policy,
+            Privacy
+            Policy
+            and
+            Content
+            Policies.
+            All
+            trademarks
+            are
+            properties
+            of
+            their
+            respective
+            owners.
+            2024
+            ©
+            Foody
+            Heaven™
+            Ltd.
+            All
+            rights
+            reserved.
+        </p>
+    </div>
+</body>
+
+</html>

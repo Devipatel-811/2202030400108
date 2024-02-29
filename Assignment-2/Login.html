@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #363434;
+        }
+        .container{
+            width: 30vw;
+            height: 70vh;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #fff;
+        }
+        .signup{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .signup h2{
+            font-size: 2rem;
+            margin: 7px 10px;
+            color: rgb(84, 84, 84);
+        }
+        .signup a{
+            font-size: 1.1rem;
+            margin-top: 10px;
+            margin-right: 5px;
+            padding-top: 5px;
+            text-decoration: none;
+            color: rgb(193, 57, 57);
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 010px;
+            gap: 1.5rem;
+        }
+        button{
+            width: 90%;
+            height: 50px;
+            font-size: 1.1rem;
+            border: 0.5pxsolid#bbbbbb9e;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        input{
+            width: 90%;
+            height: 50px;
+            padding-left: 10px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: 0.5px solid #bbbbbb9e;
+        }
+        .text{
+            font-size: 1.2rem;
+        }
+        .otp{
+            color: #fff;
+            background-color: #eb4747eb;
+        }
+        a{
+            color: rgb(193, 57, 57);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup">
+            <h2>Login</h2>
+            <a href="home page.html">cancel</a>
+        </div>
+        <div class="input">
+            <input placeholder="Phone">
+            <button class="otp">Send one time password</button>
+            <p>or</p>
+            <button>continue with Email</button>
+            <button>Sign in with Google</button>
+            <p class="text">New to Foody Heaven?<a href="signup.html">Create account</a></p>
+        </div>
+    </div>
+</body>
+</html>

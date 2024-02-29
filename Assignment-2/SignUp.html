@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign up</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #1c1b1bef;
+        }
+        .container{
+            width: 30vw;
+            height: 80vh;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+            background-color: #fff;
+        }
+        .signup{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .signup h2{
+            font-size: 2rem;
+            margin: 7px 10px;
+            color: rgb(84, 84, 84);
+        }
+        .signup a{
+            font-size: 1.1rem;
+            margin-top: 10px;
+            margin-right: 5px;
+            padding-top: 5px;
+            text-decoration: none;
+            color: rgb(193, 57, 57);
+        }
+        .input{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            margin: 010px;
+            gap: 1.5rem;
+        }
+        input{
+            width: 90%;
+            height: 50px;
+            padding-left: 10px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: 0.5px solid #bbbbbb9e;
+        }
+        .term button{
+            width: 20px;
+            height: 20px;
+            border: 0.3px solid black;
+            border-radius: 5px;
+        }
+        button{
+            width: 90%;
+            height: 50px;
+            font-size: 1.1rem;
+            border: 0.5px solid #bbbbbb9e;
+            border-radius: 8px;
+        }
+        .create{
+            background-color: #bbbbbb9e;
+        }
+        .google{
+            background-color: #fff;
+        }
+        a{
+            color: rgb(193, 57, 57);
+            text-decoration: none;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="signup">
+            <h2>Sign Up</h2>
+            <a href="home page.html">cancel</a>
+        </div>
+        <div class="input">
+            <input type="text"placeholder="Full Name">
+            <input type="email"placeholder="Email">
+            <div class="term">
+                <button></button>
+                I agree to foody heaven's terms of service. privicy policy and content polices.
+            </div>
+            <button class="create">Create account</button>
+            <p>or</p>
+            <button class="google">Sign in with Google</button>
+            <p class="text">Already have an account?<a href="login.html"color="red">Log in</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
